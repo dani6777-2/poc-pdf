@@ -20,12 +20,12 @@ export const ExportQuiz = ({ questions, score }: ExportQuizProps) => {
     doc.setFontSize(12);
     questions.forEach((question, index) => {
       // Pregunta
-      doc.setFont(undefined, 'bold');
+      doc.setFont('helvetica', 'bold');
       doc.text(`${index + 1}. ${question.question}`, 20, yOffset);
       yOffset += 10;
 
       // Opciones
-      doc.setFont(undefined, 'normal');
+      doc.setFont('helvetica', 'normal');
       question.options.forEach((option, optIndex) => {
         const prefix = String.fromCharCode(97 + optIndex); // a, b, c, d
         doc.text(`${prefix}) ${option}`, 30, yOffset);
@@ -34,7 +34,7 @@ export const ExportQuiz = ({ questions, score }: ExportQuizProps) => {
 
       // Respuesta correcta y justificación
       yOffset += 5;
-      doc.setFont(undefined, 'italic');
+      doc.setFont('helvetica', 'italic');
       doc.text(`Respuesta correcta: ${question.correctAnswer}`, 20, yOffset);
       yOffset += 8;
       doc.text(`Justificación: ${question.justification}`, 20, yOffset);
