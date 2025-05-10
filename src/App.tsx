@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import * as pdfjsLib from 'pdfjs-dist';
 import Tesseract from 'tesseract.js';
